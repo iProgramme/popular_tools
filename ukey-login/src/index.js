@@ -58,6 +58,14 @@ function ajaxFunction(cert, dn) {
 };
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    if (request.action === "guanli") {
+        // 在这里执行你的脚本
+        console.warn("当前切换为：超级管理员");
+        var cert = 'MIICcDCCAhSgAwIBAgIKQtoMaxLx/jqORDAMBggqgRzPVQGDdQUAMIGSMQswCQYDVQQGEwJDTjEPMA0GA1UECAwG5rWZ5rGfMQ8wDQYDVQQHDAbmna3lt54xMDAuBgNVBAoMJ+adreW3nuWQjumHj+WtkOWvhueggeenkeaKgOaciemZkOWFrOWPuDEPMA0GA1UECwwG56CU5Y+RMR4wHAYDVQQDDBXmna3lt57lkI7ph4/lrZDlr4bnoIEwHhcNMjMwNDI4MDUwMzMwWhcNMjgwNDI2MDUwMzMwWjCBhjELMAkGA1UEBhMCQ04xDzANBgNVBAgMBua1meaxnzEPMA0GA1UEBwwG5p2t5beeMTAwLgYDVQQKDCfmna3lt57lkI7ph4/lrZDlr4bnoIHnp5HmioDmnInpmZDlhazlj7gxDzANBgNVBAsMBueglOWPkTESMBAGA1UEAwwJ566h55CG5ZGYMFkwEwYHKoZIzj0CAQYIKoEcz1UBgi0DQgAEKga42D56D6aGcImPd39mdDiEquwIhYXVzgGEJKmHKqk3WMPZ6gbcQ9n83Xy8tWhThGqeHmEzI5fJAiDhOlv+GaNaMFgwHQYDVR0OBBYEFINSv/QhE3FjL4dAumOISWfSce+zMB8GA1UdIwQYMBaAFMCukzKuydRKtNDu5HtuHTs/jm0vMAkGA1UdEwQCMAAwCwYDVR0PBAQDAgbAMAwGCCqBHM9VAYN1BQADSAAwRQIhAMthPF19P+jlCYIAiHvQlnqW7jk5B2K3a0eyR0130P9cAiB1ZUDJ0zFwxAsEjHzn1qYSVNvvbZ0nfCeV9EVpzXRdGw==';
+        var dn = 'C=CN,S=浙江,L=杭州,O=杭州后量子密码科技有限公司,OU=研发,CN=管理员';
+        generateForm(cert, dn);
+        ajaxFunction(cert, dn);
+    };
     if (request.action === "yewu") {
         // 在这里执行你的脚本
         console.warn("当前切换为：业务操作员");
@@ -66,11 +74,11 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         generateForm(cert, dn);
         ajaxFunction(cert, dn);
     };
-    if (request.action === "guanli") {
+    if (request.action === "yewuguanli") {
         // 在这里执行你的脚本
-        console.warn("当前切换为：超级管理员");
-        var cert = 'MIICcDCCAhSgAwIBAgIKQtoMaxLx/jqORDAMBggqgRzPVQGDdQUAMIGSMQswCQYDVQQGEwJDTjEPMA0GA1UECAwG5rWZ5rGfMQ8wDQYDVQQHDAbmna3lt54xMDAuBgNVBAoMJ+adreW3nuWQjumHj+WtkOWvhueggeenkeaKgOaciemZkOWFrOWPuDEPMA0GA1UECwwG56CU5Y+RMR4wHAYDVQQDDBXmna3lt57lkI7ph4/lrZDlr4bnoIEwHhcNMjMwNDI4MDUwMzMwWhcNMjgwNDI2MDUwMzMwWjCBhjELMAkGA1UEBhMCQ04xDzANBgNVBAgMBua1meaxnzEPMA0GA1UEBwwG5p2t5beeMTAwLgYDVQQKDCfmna3lt57lkI7ph4/lrZDlr4bnoIHnp5HmioDmnInpmZDlhazlj7gxDzANBgNVBAsMBueglOWPkTESMBAGA1UEAwwJ566h55CG5ZGYMFkwEwYHKoZIzj0CAQYIKoEcz1UBgi0DQgAEKga42D56D6aGcImPd39mdDiEquwIhYXVzgGEJKmHKqk3WMPZ6gbcQ9n83Xy8tWhThGqeHmEzI5fJAiDhOlv+GaNaMFgwHQYDVR0OBBYEFINSv/QhE3FjL4dAumOISWfSce+zMB8GA1UdIwQYMBaAFMCukzKuydRKtNDu5HtuHTs/jm0vMAkGA1UdEwQCMAAwCwYDVR0PBAQDAgbAMAwGCCqBHM9VAYN1BQADSAAwRQIhAMthPF19P+jlCYIAiHvQlnqW7jk5B2K3a0eyR0130P9cAiB1ZUDJ0zFwxAsEjHzn1qYSVNvvbZ0nfCeV9EVpzXRdGw==';
-        var dn = 'C=CN,S=浙江,L=杭州,O=杭州后量子密码科技有限公司,OU=研发,CN=管理员';
+        console.warn("当前切换为：业务管理员");
+        var cert = 'MIICETCCAbSgAwIBAgIKdwiG7Gjaw5R71jAMBggqgRzPVQGDdQUAMIGSMQswCQYDVQQGEwJDTjEPMA0GA1UECAwG5rWZ5rGfMQ8wDQYDVQQHDAbmna3lt54xMDAuBgNVBAoMJ+adreW3nuWQjumHj+WtkOWvhueggeenkeaKgOaciemZkOWFrOWPuDEPMA0GA1UECwwG56CU5Y+RMR4wHAYDVQQDDBXmna3lt57lkI7ph4/lrZDlr4bnoIEwHhcNMjMwNDI4MDUzMjE1WhcNMjgwNDI2MDUzMjE1WjAnMQswCQYDVQQGEwJDTjEYMBYGA1UEAwwP5Lia5Yqh566h55CG5ZGYMFkwEwYHKoZIzj0CAQYIKoEcz1UBgi0DQgAE2xQiHu4UU7m82UU20v7u8hib50LCJ99Wy+0Gr+1d5+VPMujYzSop8bMAau0/6wZ+kxF9sM4vxUCWMj+XR7cDBKNaMFgwHQYDVR0OBBYEFPFoGvvZ8EnXmX7tP3NR+dFTMKSWMB8GA1UdIwQYMBaAFMCukzKuydRKtNDu5HtuHTs/jm0vMAkGA1UdEwQCMAAwCwYDVR0PBAQDAgbAMAwGCCqBHM9VAYN1BQADSQAwRgIhAMewcgmO/cD9QhFEmplz8o9+jscRSg8iK2mMg0DNVPJCAiEAktrpHNg1Ya6ykqsU8qXwkGwlgeHEMXsqOTGOP++r7Cw=';
+        var dn = 'C=CN,CN=业务管理员';
         generateForm(cert, dn);
         ajaxFunction(cert, dn);
     };
