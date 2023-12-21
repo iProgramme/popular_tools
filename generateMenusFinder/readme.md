@@ -2,8 +2,8 @@
 
 所以，简单写个小工具来做这件事情吧
 
-参考地址： [源文件地址](https://yubowen2003.top/MyBlog)
-文档地址： [文档地址](https://yubowen2003.top/MyBlog)
+参考地址： [源文件地址](https://github.com/iProgramme/popular_tools/blob/main/generateMenusFinder/index.js)
+文档地址： [GitHub文档地址](https://github.com/iProgramme/popular_tools/tree/main/generateMenusFinder) [博客文档地址](http://yubowen2003.top/MyBlog/posts/82f8bd45.html)
 
 ### 项目生成脚本
 
