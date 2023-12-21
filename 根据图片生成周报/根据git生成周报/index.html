@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Data from Backend</title>
+</head>
+<body>
+    <button id="casButton">cas</button>
+    <ol id="resultList"></ol>
+
+    <script>
+        document.getElementById("casButton").addEventListener("click", function () {
+            // Send a request to the backend when the button is clicked
+            fetch('/api/data?request=cas')
+                .then(response => response.json())
+                .then(data => {
+                    // Handle the received data and display it in an ordered list
+                    const resultList = document.getElementById("resultList");
+                    resultList.innerHTML = "";  // Clear previous results
+
+                    data.forEach(item => {
+                        const listItem = document.createElement("li");
+                        listItem.textContent = item;
+                        resultList.appendChild(listItem);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
